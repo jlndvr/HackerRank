@@ -13,7 +13,29 @@ vector<string> split(const string &);
  */
 
 void plusMinus(vector<int> arr) {
-
+ int n = arr.size();
+    int pos_count = 0;
+    int neg_count = 0;
+    int zero_count = 0;
+    
+    for (int num : arr) {
+        if (num > 0) {
+            pos_count++;
+        } else if (num < 0) {
+            neg_count++;
+        } else {
+            zero_count++;
+        }
+    }
+    
+    double pos_ratio = static_cast<double>(pos_count) / n;
+    double neg_ratio = static_cast<double>(neg_count) / n;
+    double zero_ratio = static_cast<double>(zero_count) / n;
+    
+    cout << fixed << setprecision(6);
+    cout << pos_ratio << endl;
+    cout << neg_ratio << endl;
+    cout << zero_ratio << endl;
 }
 
 int main()
