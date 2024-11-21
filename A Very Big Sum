@@ -14,7 +14,12 @@ vector<string> split(const string &);
  */
 
 long aVeryBigSum(vector<long> ar) {
-
+    long long sum=0;
+    long long n=ar.size();
+for(int i=0;i<n;i++){
+    sum+=ar[i];
+}
+return sum;
 }
 
 int main()
