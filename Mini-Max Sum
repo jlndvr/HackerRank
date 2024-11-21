@@ -13,8 +13,20 @@ vector<string> split(const string &);
  */
 
 void miniMaxSum(vector<int> arr) {
-
+  // Sort the array
+    vector<int> sortedArr = arr;
+    sort(sortedArr.begin(), sortedArr.end());
+    
+    // Calculate the minimum sum (sum of the first n-1 elements)
+    long long min_sum = accumulate(sortedArr.begin(), sortedArr.end() - 1, 0LL);
+    
+    // Calculate the maximum sum (sum of the last n-1 elements)
+    long long max_sum = accumulate(sortedArr.begin() + 1, sortedArr.end(), 0LL);
+    
+    // Print the results
+    cout << min_sum << " " << max_sum << endl;
 }
+
 
 int main()
 {
